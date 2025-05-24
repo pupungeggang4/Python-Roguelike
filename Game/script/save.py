@@ -1,7 +1,10 @@
 import json
 
 empty = {
-    1: [1, 2, 3]
+    'card': [],
+    'equipment': [],
+    'item': [],
+    'unlock': []
 }
 
 def load_data(game):
@@ -16,3 +19,16 @@ def load_data(game):
         f = open('save/save.txt', 'r')
         game.save = json.loads(f.readline())
         f.close()
+
+def save_data(game):
+    f = open('save/save.txt', 'w')
+    f.write(json.dumps(game.save))
+    f.close()
+
+def erase_data(game):
+    f = open('save/save.txt', 'w')
+    f.write(json.dumps(empty))
+    f.close()
+    f = open('save/save.txt', 'r')
+    game.save = json.loads(f.readline())
+    f.close()

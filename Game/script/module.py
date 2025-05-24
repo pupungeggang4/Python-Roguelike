@@ -1,5 +1,6 @@
 from script.res import *
 from script.UI import *
+from script.func import *
 from script.save import *
 from script.primitive import *
 from script.card import *
