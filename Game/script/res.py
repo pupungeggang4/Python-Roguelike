@@ -4,3 +4,6 @@ class Color():
 
 class Font():
     neodgm_32 = None
+
+class Image():
+    pass
