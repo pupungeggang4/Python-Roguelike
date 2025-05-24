@@ -3,6 +3,7 @@ from script.module import *
 import script.scenetitle as scenetitle
 import script.scenemap as scenemap
 import script.scenebattle as scenebattle
+import script.sceneinfo as sceneinfo
 
 class Game():
     def __init__(self):
@@ -41,6 +42,9 @@ class Game():
         elif self.scene == 'battle':
             scenebattle.loop(self)
 
+        elif self.scene == 'info':
+            sceneinfo.loop(self)
+
     def handle_input(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -59,5 +63,8 @@ class Game():
 
                 elif self.scene == 'battle':
                     scenebattle.mouse_up(self, pos, button)
+
+                elif self.scene == 'info':
+                    sceneinfo.mouse_up(self, pos, button)
 
 Game().run()
