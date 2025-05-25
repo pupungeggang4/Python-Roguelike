@@ -5,7 +5,13 @@ def loop(game):
     render(game)
 
 def render(game):
-    pass
+    game.surface.fill(Color.white)
+    pygame.draw.rect(game.surface, Color.black, UI.Info.button_back, 2)
+    game.surface.blit(Font.neodgm_32.render('Found', False, Color.black), UI.Info.text_title)
+    pygame.display.flip()
 
 def mouse_up(game, pos, button):
-    pass
+    if button == 1:
+        if point_inside_rect_UI(pos, UI.Info.button_back):
+            game.scene = 'title'
+            game.state = ''

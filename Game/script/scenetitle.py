@@ -22,7 +22,9 @@ def mouse_up(game, pos, button):
             game.state = ''
 
         if point_inside_rect_UI(pos, UI.Title.button_info):
-            pass
+            game.scene = 'info'
+            game.state = ''
+            game.info_tab = 'card'
 
         if point_inside_rect_UI(pos, UI.Title.button_erase):
             erase_data(game)

@@ -14,6 +14,7 @@ class Game():
         self.scene = 'title'
         self.state = ''
         self.state_click = ''
+        self.info_tab = ''
         self.FPS = 60
         save = {}
         load_data(self)

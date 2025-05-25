@@ -7,3 +7,11 @@ class UI():
         text_info = [184, 264]
         button_erase = [160, 320, 960, 80]
         text_erase = [184, 344]
+
+    class Map():
+        text_title = [24, 24]
+        button_back = [1180, 20, 80, 80]
+
+    class Info():
+        text_title = [24, 24]
+        button_back = [1180, 20, 80, 80]
