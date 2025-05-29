@@ -4,7 +4,7 @@ empty = {
     'card': [],
     'equipment': [],
     'item': [],
-    'unlock': []
+    'unlock': [False, True, False, False, False, False, False, False, False, False]
 }
 
 def load_data(game):

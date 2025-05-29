@@ -1,6 +1,7 @@
 import pygame, sys
 from script.module import *
 import script.scenetitle as scenetitle
+import script.scenecharacterselect as scenecharacterselect
 import script.scenemap as scenemap
 import script.scenebattle as scenebattle
 import script.sceneinfo as sceneinfo
@@ -11,10 +12,15 @@ class Game():
         pygame.font.init()
         self.load_font()
         self.load_image()
+
         self.scene = 'title'
         self.state = ''
         self.state_click = ''
+        self.menu = False
         self.info_tab = ''
+
+        self.selected_character = -1
+
         self.FPS = 60
         save = {}
         load_data(self)
@@ -37,6 +43,9 @@ class Game():
         if self.scene == 'title':
             scenetitle.loop(self)
 
+        elif self.scene == 'character_select':
+            scenecharacterselect.loop(self)
+
         elif self.scene == 'map':
             scenemap.loop(self)
 
@@ -58,6 +67,9 @@ class Game():
                 
                 if self.scene == 'title':
                     scenetitle.mouse_up(self, pos, button)
+
+                elif self.scene == 'character_select':
+                    scenecharacterselect.mouse_up(self, pos, button)
 
                 elif self.scene == 'map':
                     scenemap.mouse_up(self, pos, button)

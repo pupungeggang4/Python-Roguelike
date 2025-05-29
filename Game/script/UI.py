@@ -7,6 +7,8 @@ class UI():
         text_info = [184, 264]
         button_erase = [160, 320, 960, 80]
         text_erase = [184, 344]
+        button_exit = [160, 400, 960, 80]
+        text_exit = [184, 424]
 
     class Map():
         text_title = [24, 24]
