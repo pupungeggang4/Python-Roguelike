@@ -21,6 +21,9 @@ class Game():
 
         self.selected_character = -1
 
+        self.adventure = Adventure()
+        self.player = Player()
+
         self.FPS = 60
         save = {}
         load_data(self)
