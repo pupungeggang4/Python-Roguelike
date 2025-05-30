@@ -1,0 +1,4 @@
+{
+    "1": {"ID": 1, "name": "1", "element": "normal", "type": "attack", "rarity": "basic", "energy": 1, "action": []},
+    "2": {"ID": 1, "name": "2", "element": "normal", "type": "attack", "rarity": "basic", "energy": 2, "action": []}
+}

@@ -12,6 +12,7 @@ class Game():
         pygame.font.init()
         self.load_font()
         self.load_image()
+        self.load_data()
 
         self.scene = 'title'
         self.state = ''
@@ -26,7 +27,7 @@ class Game():
 
         self.FPS = 60
         save = {}
-        load_data(self)
+        load_save_data(self)
         self.clock = pygame.time.Clock()
         self.surface = pygame.display.set_mode([1280, 720], pygame.SCALED, vsync = 1)
 
@@ -35,6 +36,67 @@ class Game():
 
     def load_image(self):
         pass
+
+    def load_data(self):
+        f = open('data/card.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.card[int(k)] = d[k]
+        f.close()
+
+        f = open('data/card_description.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.card_description[int(k)] = d[k]
+        f.close()
+
+        f = open('data/equipment.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.equipment[int(k)] = d[k]
+        f.close()
+
+        f = open('data/equipment_description.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.equipment_description[int(k)] = d[k]
+        f.close()
+
+        f = open('data/item.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.item[int(k)] = d[k]
+        f.close()
+
+        f = open('data/item_description.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.item_description[int(k)] = d[k]
+        f.close()
+
+        f = open('data/unit.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.unit[int(k)] = d[k]
+        f.close()
+
+        f = open('data/unit_description.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.unit_description[int(k)] = d[k]
+        f.close()
+
+        f = open('data/character.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.character[int(k)] = d[k]
+        f.close()
+
+        f = open('data/character_description.json', 'r')
+        d = json.loads(f.read())
+        for k in d:
+            Data.character_description[int(k)] = d[k]
+        f.close()
 
     def run(self):
         while True:

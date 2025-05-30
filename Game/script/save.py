@@ -7,7 +7,7 @@ empty = {
     'unlock': [False, True, False, False, False, False, False, False, False, False]
 }
 
-def load_data(game):
+def load_save_data(game):
     try:
         f = open('save/save.txt', 'r')
         game.save = json.loads(f.readline())

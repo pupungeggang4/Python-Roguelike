@@ -32,3 +32,4 @@ def mouse_up(game, pos, button):
             if game.selected_character != -1:
                 game.scene = 'map'
                 game.state = ''
+                game.player.set_player(game.selected_character + 1)
