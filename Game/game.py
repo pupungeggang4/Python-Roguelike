@@ -11,7 +11,7 @@ class Game():
         pygame.init()
         pygame.font.init()
         self.load_font()
-        self.load_image()
+        load_image()
         self.load_data()
 
         self.scene = 'title'
@@ -26,16 +26,13 @@ class Game():
         self.player = Player()
 
         self.FPS = 60
-        save = {}
+        self.save = {}
         load_save_data(self)
         self.clock = pygame.time.Clock()
         self.surface = pygame.display.set_mode([1280, 720], pygame.SCALED, vsync = 1)
 
     def load_font(self):
         Font.neodgm_32 = pygame.font.Font('font/neodgm.ttf', 32)
-
-    def load_image(self):
-        pass
 
     def load_data(self):
         f = open('data/card.json', 'r')
