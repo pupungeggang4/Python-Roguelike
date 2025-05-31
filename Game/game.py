@@ -18,6 +18,7 @@ class Game():
         self.state = ''
         self.state_click = ''
         self.menu = False
+        self.player_info_tab = ''
         self.info_tab = ''
 
         self.selected_character = -1

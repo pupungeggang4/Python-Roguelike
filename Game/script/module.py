@@ -3,6 +3,7 @@ from script.UI import *
 from script.data import *
 
 from script.func import *
+from script.render import *
 from script.save import *
 
 from script.primitive import *

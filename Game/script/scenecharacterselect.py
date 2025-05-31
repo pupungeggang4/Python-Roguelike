@@ -7,7 +7,7 @@ def loop(game):
 def render(game):
     game.surface.fill(Color.white)
     game.surface.blit(Font.neodgm_32.render('Select Character', False, Color.black), UI.Character_Select.text_title)
-    pygame.draw.rect(game.surface, Color.black, UI.Character_Select.button_back, 2)
+    game.surface.blit(Image.Button.back, UI.Character_Select.button_back)
 
     for i in range(9):
         pygame.draw.rect(game.surface, Color.black, UI.Character_Select.button_character[i], 2)
@@ -18,6 +18,11 @@ def render(game):
 
     if game.selected_character != -1:
         game.surface.blit(Image.select_frame, UI.Character_Select.button_character[game.selected_character])
+        game.surface.blit(Font.neodgm_32.render(Data.character_description[game.selected_character + 1]['name'], False, Color.black), UI.Character_Select.text_name)
+        game.surface.blit(Font.neodgm_32.render(f'HP:{Data.character[game.selected_character + 1]['hp']}', False, Color.black), UI.Character_Select.text_hp)
+        game.surface.blit(Font.neodgm_32.render(f'Energy:{Data.character[game.selected_character + 1]['energy']}', False, Color.black), UI.Character_Select.text_energy)
+        game.surface.blit(Font.neodgm_32.render(f'Attack:{Data.character[game.selected_character + 1]['attack']}', False, Color.black), UI.Character_Select.text_attack)
+        game.surface.blit(Font.neodgm_32.render(f'Hardness:{Data.character[game.selected_character + 1]['hardness']}', False, Color.black), UI.Character_Select.text_hardness)
 
     pygame.draw.rect(game.surface, Color.black, UI.Character_Select.box_description, 2)
     pygame.draw.rect(game.surface, Color.black, UI.Character_Select.button_start, 2)

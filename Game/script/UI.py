@@ -18,18 +18,41 @@ class UI():
             [40, 320, 160, 160], [240, 320, 160, 160], [440, 320, 160, 160],
             [40, 520, 160, 160], [240, 520, 160, 160], [440, 520, 160, 160]
         ]
-        box_description = [780, 120, 480, 360]
+        box_description = [700, 120, 560, 360]
+        text_name = [704, 124]
+        text_hp = [704, 324]
+        text_energy = [704, 364]
+        text_attack = [704, 404]
+        text_hardness = [704, 444]
+        
         button_start = [1100, 600, 160, 80]
         text_start = [1124, 624]
 
     class Map():
         text_title = [24, 24]
-        button_back = [1180, 20, 80, 80]
+        button_menu = [1180, 20, 80, 80]
         button_info = [1180, 620, 80, 80]
         element_start = [180, 80]
         element_size = [80, 80]
         element_interval = [120, 120]
 
+        class Info():
+            rect = [160, 40, 960, 640]
+            tab_profile = [160, 40, 160, 40]
+            tab_card = [320, 40, 160, 40]
+
+            text_name = []
+            portrait = []
+            button_close = [1080, 40, 40, 40]
+
     class Info():
         text_title = [24, 24]
         button_back = [1180, 20, 80, 80]
+
+    class Menu():
+        rect = [320, 240, 640, 240]
+        text_paused = [344, 264]
+        button_resume = [320, 320, 640, 80]
+        text_resume = [344, 344]
+        button_exit = [320, 400, 640, 80]
+        text_exit = [344, 424]
