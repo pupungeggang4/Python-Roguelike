@@ -3,6 +3,7 @@ import random
 class Adventure():
     def __init__(self):
         self.floor = 1
+        self.column_next = 1
         self.layout = [
             [0, 2, 2, 2, 2, 2, 2, 0],
             [0, 2, 2, 2, 2, 2, 2, 0],
@@ -10,6 +11,7 @@ class Adventure():
             [0, 2, 2, 2, 2, 2, 2, 0],
             [0, 2, 2, 2, 2, 2, 2, 0]
         ]
+        self.generate_layout()
 
     def generate_layout(self):
         self.layout = [

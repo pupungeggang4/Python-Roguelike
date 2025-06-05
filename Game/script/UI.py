@@ -38,12 +38,21 @@ class UI():
 
         class Info():
             rect = [160, 40, 960, 640]
-            tab_profile = [160, 40, 160, 40]
-            tab_card = [320, 40, 160, 40]
-
-            text_name = []
-            portrait = []
             button_close = [1080, 40, 40, 40]
+            tab_profile = [160, 40, 200, 40]
+            icon_profile = [240, 40]
+            tab_card = [360, 40, 200, 40]
+            icon_card = [440, 40]
+
+            text_name = [164, 84]
+            portrait = [200, 120, 160, 160]
+            text_level = [164, 364]
+            text_exp = [164, 404]
+            text_gold = [164, 444]
+            text_hp = [164, 484]
+            text_energy = [164, 524]
+            text_attack = [164, 564]
+            text_hardness = [164, 604]
 
     class Info():
         text_title = [24, 24]

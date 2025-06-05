@@ -20,23 +20,25 @@ class Image():
 
     locked = None
     select_frame = None
+    select_frame_80 = None
     character = [0, None]
 
 def load_image():
-    Image.icon['start'] = pygame.image.load('image/IconStart.png')
-    Image.icon['battle'] = pygame.image.load('image/IconBattle.png')
-    Image.icon['event'] = pygame.image.load('image/IconEvent.png')
-    Image.icon['shop'] = pygame.image.load('image/IconShop.png')
-    Image.icon['rest'] = pygame.image.load('image/IconRest.png')
-    Image.icon['boss'] = pygame.image.load('image/IconBoss.png')
+    Image.icon['start'] = pygame.image.load('image/icon/IconStart.png')
+    Image.icon['battle'] = pygame.image.load('image/icon/IconBattle.png')
+    Image.icon['event'] = pygame.image.load('image/icon/IconEvent.png')
+    Image.icon['shop'] = pygame.image.load('image/icon/IconShop.png')
+    Image.icon['rest'] = pygame.image.load('image/icon/IconRest.png')
+    Image.icon['boss'] = pygame.image.load('image/icon/IconBoss.png')
 
-    Image.Button.back = pygame.image.load('image/ButtonBack.png')
-    Image.Button.menu = pygame.image.load('image/ButtonMenu.png')
-    Image.Button.info = pygame.image.load('image/ButtonInfo.png')
-    Image.Button.prev = pygame.image.load('image/ButtonPrev.png')
-    Image.Button.next = pygame.image.load('image/ButtonNext.png')
+    Image.Button.back = pygame.image.load('image/button/ButtonBack.png')
+    Image.Button.menu = pygame.image.load('image/button/ButtonMenu.png')
+    Image.Button.info = pygame.image.load('image/button/ButtonInfo.png')
+    Image.Button.prev = pygame.image.load('image/button/ButtonPrev.png')
+    Image.Button.next = pygame.image.load('image/button/ButtonNext.png')
 
     Image.locked = pygame.image.load('image/Locked.png')
     Image.select_frame = pygame.image.load('image/SelectFrame.png')
+    Image.select_frame_80 = pygame.image.load('image/SelectFrame80.png')
 
     Image.character[1] = pygame.image.load('image/Character1.png')

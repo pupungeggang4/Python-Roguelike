@@ -16,6 +16,8 @@ def render(game):
                 rect = [UI.Map.element_start[0] + UI.Map.element_interval[0] * j, UI.Map.element_start[1] + UI.Map.element_interval[1] * i, UI.Map.element_size[0], UI.Map.element_size[1]]
                 img_list = ['', 'start', 'battle', 'event', 'shop', 'rest', 'boss']
                 game.surface.blit(Image.icon[img_list[game.adventure.layout[i][j]]], rect)
+                if j == game.advanture.column_next:
+                    game.surface.blit(Image.select_frame_80)
 
     if game.state == 'info':
         Render.render_info(game.surface, game.player)
@@ -38,6 +40,8 @@ def mouse_up(game, pos, button):
 
             elif game.state == 'info':
                 if point_inside_rect_UI(pos, UI.Map.button_info):
+                    game.state = ''
+                elif point_inside_rect_UI(pos, UI.Map.Info.button_close):
                     game.state = ''
 
         if game.menu == True:

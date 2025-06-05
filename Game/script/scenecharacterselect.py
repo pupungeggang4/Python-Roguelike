@@ -47,4 +47,4 @@ def mouse_up(game, pos, button):
                 game.state = ''
                 game.player.set_player(game.selected_character + 1)
                 game.adventure.floor = 1
-                game.adventure.generate_layout()
+                game.adventure = Adventure()
