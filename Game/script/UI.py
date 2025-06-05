@@ -54,6 +54,9 @@ class UI():
             text_attack = [164, 564]
             text_hardness = [164, 604]
 
+    class Battle():
+        button_menu = [1180, 20, 80, 80]
+
     class Info():
         text_title = [24, 24]
         button_back = [1180, 20, 80, 80]

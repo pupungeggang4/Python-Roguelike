@@ -20,7 +20,7 @@ def render(game):
                     game.surface.blit(Image.select_frame_80, rect)
 
     if game.state == 'info':
-        Render.render_info(game.surface, game.player)
+        Render.render_info(game, game.surface, game.player)
 
     if game.menu == True:
         Render.render_menu(game.surface)
@@ -38,11 +38,17 @@ def mouse_up(game, pos, button):
                     game.state = 'info'
                     game.player_info_tab = 'profile'
 
+                handle_click_map(game, pos)
+
             elif game.state == 'info':
                 if point_inside_rect_UI(pos, UI.Map.button_info):
                     game.state = ''
                 elif point_inside_rect_UI(pos, UI.Map.Info.button_close):
                     game.state = ''
+                elif point_inside_rect_UI(pos, UI.Map.Info.tab_profile):
+                    game.player_info_tab = 'profile'
+                elif point_inside_rect_UI(pos, UI.Map.Info.tab_card):
+                    game.player_info_tab = 'card'
 
         if game.menu == True:
             if point_inside_rect_UI(pos, UI.Menu.button_resume):
@@ -51,3 +57,11 @@ def mouse_up(game, pos, button):
                 game.menu = False
                 game.scene = 'title'
                 game.state = ''
+
+def handle_click_map(game, pos):
+    for i in range(5):
+        for j in range(8):
+            rect = [UI.Map.element_start[0] + UI.Map.element_interval[0] * j, UI.Map.element_start[1] + UI.Map.element_interval[1] * i, UI.Map.element_size[0], UI.Map.element_size[1]]
+            if point_inside_rect_UI(pos, rect):
+                if game.adventure.column_next == j:
+                    game.scene = 'battle'
