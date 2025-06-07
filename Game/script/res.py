@@ -10,7 +10,7 @@ class Font():
 class Image():
     icon = {
         'start': None, 'battle': None, 'event': None, 'shop': None, 'rest': None, 'boss': None,
-        'card': None, 'equipment': None, 'weapon': None, 'item': None
+        'card': None, 'equipment': None, 'weapon': None, 'item': None, 'profile': None
     }
 
     class Button():
@@ -19,6 +19,7 @@ class Image():
         info = None
         prev = None
         next = None
+        close = None
 
     locked = None
     select_frame = None
@@ -36,12 +37,14 @@ def load_image():
     Image.icon['weapon'] = pygame.image.load('image/icon/IconWeapon.png')
     Image.icon['equipment'] = pygame.image.load('image/icon/IconEquipment.png')
     Image.icon['item'] = pygame.image.load('image/icon/IconItem.png')
+    Image.icon['profile'] = pygame.image.load('image/icon/IconProfile.png')
 
     Image.Button.back = pygame.image.load('image/button/ButtonBack.png')
     Image.Button.menu = pygame.image.load('image/button/ButtonMenu.png')
     Image.Button.info = pygame.image.load('image/button/ButtonInfo.png')
     Image.Button.prev = pygame.image.load('image/button/ButtonPrev.png')
     Image.Button.next = pygame.image.load('image/button/ButtonNext.png')
+    Image.Button.close = pygame.image.load('image/button/ButtonClose.png')
 
     Image.locked = pygame.image.load('image/Locked.png')
     Image.select_frame = pygame.image.load('image/SelectFrame.png')
