@@ -60,6 +60,14 @@ class UI():
     class Info():
         text_title = [24, 24]
         button_back = [1180, 20, 80, 80]
+        tab_card = [140, 120, 200, 40]
+        icon_card = [220, 120]
+        tab_weapon = [340, 120, 200, 40]
+        icon_weapon = [420, 120]
+        tab_equipment = [540, 120, 200, 40]
+        icon_equipment = [620, 120]
+        tab_item = [740, 120, 200, 40]
+        icon_item = [820, 120]
 
     class Menu():
         rect = [320, 240, 640, 240]

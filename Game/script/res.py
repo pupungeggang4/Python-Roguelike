@@ -9,8 +9,10 @@ class Font():
 
 class Image():
     icon = {
-        'start': None, 'battle': None, 'event': None, 'shop': None, 'rest': None, 'boss': None
+        'start': None, 'battle': None, 'event': None, 'shop': None, 'rest': None, 'boss': None,
+        'card': None, 'equipment': None, 'weapon': None, 'item': None
     }
+
     class Button():
         back = None
         menu = None
@@ -30,6 +32,10 @@ def load_image():
     Image.icon['shop'] = pygame.image.load('image/icon/IconShop.png')
     Image.icon['rest'] = pygame.image.load('image/icon/IconRest.png')
     Image.icon['boss'] = pygame.image.load('image/icon/IconBoss.png')
+    Image.icon['card'] = pygame.image.load('image/icon/IconCard.png')
+    Image.icon['weapon'] = pygame.image.load('image/icon/IconWeapon.png')
+    Image.icon['equipment'] = pygame.image.load('image/icon/IconEquipment.png')
+    Image.icon['item'] = pygame.image.load('image/icon/IconItem.png')
 
     Image.Button.back = pygame.image.load('image/button/ButtonBack.png')
     Image.Button.menu = pygame.image.load('image/button/ButtonMenu.png')
