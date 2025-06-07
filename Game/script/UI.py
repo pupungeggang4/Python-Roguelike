@@ -68,3 +68,11 @@ class UI():
         text_resume = [344, 344]
         button_exit = [320, 400, 640, 80]
         text_exit = [344, 424]
+
+    class Card():
+        rect = [0, 0, 200, 240]
+        energy_rect = [0, 0, 40, 40]
+        energy_text = [4, 4]
+        image = [20, 20, 160, 120]
+        d_text_start = [4, 164]
+        d_text_interval = [0, 20]
