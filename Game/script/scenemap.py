@@ -1,4 +1,4 @@
-import sys, pygame
+import sys, pygame, math
 from script.module import *
 
 def loop(game):
@@ -49,6 +49,17 @@ def mouse_up(game, pos, button):
                     game.player_info_tab = 'profile'
                 elif point_inside_rect_UI(pos, UI.Map.Info.tab_card):
                     game.player_info_tab = 'card'
+                    game.player_card_page = 0
+
+                if game.player_info_tab == 'card':
+                    if point_inside_rect_UI(pos, UI.Map.Info.button_prev):
+                        if game.player_card_page > 0:
+                            game.player_card_page -= 1
+
+                    if point_inside_rect_UI(pos, UI.Map.Info.button_next):
+                        max_page = math.ceil(len(game.player.deck) / 8) - 1
+                        if game.player_card_page < max_page:
+                            game.player_card_page += 1
 
         if game.menu == True:
             if point_inside_rect_UI(pos, UI.Menu.button_resume):

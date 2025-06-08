@@ -39,5 +39,15 @@ class Render():
             surface.blit(Font.neodgm_32.render(f'Item', False, Color.black), UI.Map.Info.text_item)
             for i in range(4):
                 pygame.draw.rect(surface, Color.black, UI.Map.Info.item[i], 2)
+
         elif game.player_info_tab == 'card':
-            pass
+            surface.blit(Font.neodgm_32.render('Card', False, Color.black), UI.Map.Info.text_card)
+
+            for i in range(8):
+                index = game.player_card_page * 8 + i
+                if index < len(game.player.deck):
+                    game.player.deck[index].render(game.surface, UI.Map.Info.card[i])
+                pygame.draw.rect(surface, Color.black, UI.Map.Info.card[i], 2)
+
+            surface.blit(Image.Button.prev, UI.Map.Info.button_prev)
+            surface.blit(Image.Button.next, UI.Map.Info.button_next)

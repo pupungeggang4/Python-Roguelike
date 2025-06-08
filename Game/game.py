@@ -19,6 +19,7 @@ class Game():
         self.state_click = ''
         self.menu = False
         self.player_info_tab = ''
+        self.player_card_page = 0
         self.info_tab = ''
 
         self.selected_character = -1
@@ -33,6 +34,7 @@ class Game():
         self.surface = pygame.display.set_mode([1280, 720], pygame.SCALED, vsync = 1)
 
     def load_font(self):
+        Font.neodgm_16 = pygame.font.Font('font/neodgm.ttf', 16)
         Font.neodgm_32 = pygame.font.Font('font/neodgm.ttf', 32)
 
     def load_data(self):

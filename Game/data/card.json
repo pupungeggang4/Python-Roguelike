@@ -1,4 +1,4 @@
 {
-    "1": {"ID": 1, "name": "1", "element": "normal", "type": "attack", "rarity": "basic", "energy": 1, "effect": []},
-    "2": {"ID": 1, "name": "2", "element": "normal", "type": "attack", "rarity": "basic", "energy": 2, "effect": []}
+    "1": {"ID": 1, "name": "attack", "element": "normal", "type": "attack", "rarity": "basic", "energy": 1, "effect": []},
+    "2": {"ID": 1, "name": "guard", "element": "normal", "type": "util", "rarity": "basic", "energy": 2, "effect": []}
 }

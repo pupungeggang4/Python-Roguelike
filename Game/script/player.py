@@ -26,3 +26,12 @@ class Player():
         self.attack = data['attack']
         self.hardness = data['hardness']
         self.deck = []
+
+        for i in range(len(data['start_deck'])):
+            card = Card()
+            card.set_data(data['start_deck'][i])
+            self.deck.append(card)
+
+        self.weapon = []
+        self.equipment = []
+        self.item = []

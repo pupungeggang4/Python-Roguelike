@@ -1,5 +1,5 @@
 {
-    "1": {"name": "fire", "hp": 60, "energy": 5, "attack": 0, "hardness": 0, "start_deck": [1, 1, 1, 1, 2, 2, 2, 2]},
+    "1": {"name": "fire", "hp": 60, "energy": 5, "attack": 0, "hardness": 0, "start_deck": [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]},
     "2": {"name": "fire", "hp": 60, "energy": 5, "attack": 0, "hardness": 0, "start_deck": [1, 1, 1, 1, 2, 2, 2, 2]},
     "3": {"name": "fire", "hp": 60, "energy": 5, "attack": 0, "hardness": 0, "start_deck": [1, 1, 1, 1, 2, 2, 2, 2]},
     "4": {"name": "fire", "hp": 60, "energy": 5, "attack": 0, "hardness": 0, "start_deck": [1, 1, 1, 1, 2, 2, 2, 2]},
