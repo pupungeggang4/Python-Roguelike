@@ -1,1 +1,3 @@
-{}
+{
+    "101": {"ID": 101, "name": "extra battery", "description": ["Start of Game", "Gain 1 energy."]}
+}
