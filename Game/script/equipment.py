@@ -8,9 +8,9 @@ class Equipment():
         self.element = ''
         self.rarity = ''
         self.effect = []
-        self.description = ''
+        self.description = []
 
-    def set_data(ID):
+    def set_data(self, ID):
         data = json.loads(json.dumps(Data.equipment[ID]))
         data_d = json.loads(json.dumps(Data.equipment_description[ID]))
         self.ID = ID

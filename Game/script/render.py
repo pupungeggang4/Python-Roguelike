@@ -33,6 +33,8 @@ class Render():
             surface.blit(Font.neodgm_32.render(f'Hardness: {player.hardness}', False, Color.black), UI.Map.Info.text_hardness)
 
             surface.blit(Font.neodgm_32.render(f'Weapon', False, Color.black), UI.Map.Info.text_weapon)
+            pygame.draw.rect(surface, Color.black, UI.Map.Info.weapon, 2)
+            pygame.draw.rect(surface, Color.black, UI.Map.Info.description_rect, 2)
             surface.blit(Font.neodgm_32.render(f'Equipment', False, Color.black), UI.Map.Info.text_equipment)
             for i in range(8):
                 pygame.draw.rect(surface, Color.black, UI.Map.Info.equipment[i], 2)

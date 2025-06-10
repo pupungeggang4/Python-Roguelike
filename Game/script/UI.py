@@ -55,6 +55,8 @@ class UI():
             text_hardness = [164, 524]
 
             text_weapon = [404, 84]
+            weapon = [400, 160, 80, 80]
+            description_rect = [720, 160, 320, 80]
             text_equipment = [404, 284]
 
             equipment = [

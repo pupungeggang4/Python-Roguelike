@@ -91,12 +91,12 @@ class Game():
         f = open('data/weapon.json', 'r')
         d = json.loads(f.read())
         for k in d:
-            Data.character[int(k)] = d[k]
+            Data.weapon[int(k)] = d[k]
         f.close()
         f = open('data/weapon_description.json', 'r')
         d = json.loads(f.read())
         for k in d:
-            Data.character_description[int(k)] = d[k]
+            Data.weapon_description[int(k)] = d[k]
         f.close()
 
     def run(self):

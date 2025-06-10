@@ -11,7 +11,11 @@ class Player():
         self.energy = 6
         self.attack = 0
         self.hardness = 0
+
         self.deck = []
+        self.weapon = None
+        self.equipment = []
+        self.item = []
 
     def set_player(self, ID):
         data = copy.deepcopy(Data.character[ID])
@@ -32,6 +36,10 @@ class Player():
             card.set_data(data['start_deck'][i])
             self.deck.append(card)
 
-        self.weapon = []
+        self.weapon = Weapon()
+        self.weapon.set_data(data['weapon'])
         self.equipment = []
+        equipment = Equipment()
+        equipment.set_data(data['equipment'])
+        self.equipment.append(equipment)
         self.item = []
