@@ -9,3 +9,5 @@ class Data():
     unit_description = {}
     character = {}
     character_description = {}
+    weapon = {}
+    weapon_description = {}
