@@ -49,14 +49,16 @@ class UI():
             text_level = [164, 284]
             text_exp = [164, 324]
             text_gold = [164, 364]
-            text_hp = [164, 404]
-            text_energy = [164, 444]
-            text_attack = [164, 484]
-            text_hardness = [164, 524]
+            text_hp = [164, 484]
+            text_energy = [164, 524]
+            text_attack = [164, 564]
+            text_hardness = [164, 604]
 
             text_weapon = [404, 84]
             weapon = [400, 160, 80, 80]
             description_rect = [720, 160, 320, 80]
+            description_text = [724, 164]
+            description_interval = [0, 20]
             text_equipment = [404, 284]
 
             equipment = [
@@ -77,6 +79,8 @@ class UI():
 
     class Battle():
         button_menu = [1180, 20, 80, 80]
+        field_rect = [20, 20, 640, 640]
+        field_area = [60, 60, 560, 560]
 
     class Info():
         text_title = [24, 24]

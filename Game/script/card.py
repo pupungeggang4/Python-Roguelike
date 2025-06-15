@@ -27,6 +27,7 @@ class Card():
 
     def render(self, sur, pos):
         self.surface.fill(Color.white)
+        self.surface.blit(Image.card[self.ID], UI.Card.image)
         pygame.draw.rect(self.surface, Color.black, UI.Card.rect, 2)
         pygame.draw.rect(self.surface, Color.black, UI.Card.image, 2)
         self.surface.blit(Font.neodgm_32.render(f'{self.energy}', False, Color.black), UI.Card.text_energy)

@@ -22,7 +22,9 @@ class Render():
         surface.blit(Image.icon['card'], UI.Map.Info.icon_card)
 
         if game.player_info_tab == 'profile':
+            surface.blit(Image.character[player.ID], UI.Map.Info.portrait)
             pygame.draw.rect(surface, Color.black, UI.Map.Info.portrait, 2)
+
             surface.blit(Font.neodgm_32.render(f'{player.name}', False, Color.black), UI.Map.Info.text_name)
             surface.blit(Font.neodgm_32.render(f'Lv.{player.level}', False, Color.black), UI.Map.Info.text_level)
             surface.blit(Font.neodgm_32.render(f'Exp: {player.exp}/{player.exp_max}', False, Color.black), UI.Map.Info.text_exp)
@@ -32,15 +34,40 @@ class Render():
             surface.blit(Font.neodgm_32.render(f'Attack: {player.attack}', False, Color.black), UI.Map.Info.text_attack)
             surface.blit(Font.neodgm_32.render(f'Hardness: {player.hardness}', False, Color.black), UI.Map.Info.text_hardness)
 
+            pygame.draw.rect(surface, Color.black, UI.Map.Info.description_rect, 2)
+            if game.player_info_index == -1:
+                d = player.weapon.description
+                surface.blit(Font.neodgm_16.render(player.weapon.name, False, Color.black), UI.Map.Info.description_text)
+                for i in range(len(d)):
+                    pos = [UI.Map.Info.description_text[0], UI.Map.Info.description_text[1] + UI.Map.Info.description_interval[1] * (i + 1)]
+                    surface.blit(Font.neodgm_16.render(d[i], False, Color.black), pos)
+            elif game.player_info_index < 8:
+                d = player.equipment[game.player_info_index].description
+                surface.blit(Font.neodgm_16.render(player.equipment[game.player_info_index].name, False, Color.black), UI.Map.Info.description_text)
+                for i in range(len(d)):
+                    pos = [UI.Map.Info.description_text[0], UI.Map.Info.description_text[1] + UI.Map.Info.description_interval[1] * (i + 1)]
+                    surface.blit(Font.neodgm_16.render(d[i], False, Color.black), pos)
+            else:
+                d = player.item[game.player_info_index - 8].description
+                surface.blit(Font.neodgm_16.render(player.item[game.player_info_index - 8].name, False, Color.black), UI.Map.Info.description_text)
+                for i in range(len(d)):
+                    pos = [UI.Map.Info.description_text[0], UI.Map.Info.description_text[1] + UI.Map.Info.description_interval[1] * (i + 1)]
+                    surface.blit(Font.neodgm_16.render(d[i], False, Color.black), pos)
+
             surface.blit(Font.neodgm_32.render(f'Weapon', False, Color.black), UI.Map.Info.text_weapon)
             pygame.draw.rect(surface, Color.black, UI.Map.Info.weapon, 2)
-            pygame.draw.rect(surface, Color.black, UI.Map.Info.description_rect, 2)
+            player.weapon.render(surface, UI.Map.Info.weapon)
+
             surface.blit(Font.neodgm_32.render(f'Equipment', False, Color.black), UI.Map.Info.text_equipment)
             for i in range(8):
                 pygame.draw.rect(surface, Color.black, UI.Map.Info.equipment[i], 2)
+                if i < len(player.equipment):
+                    player.equipment[i].render(surface, UI.Map.Info.equipment[i])
             surface.blit(Font.neodgm_32.render(f'Item', False, Color.black), UI.Map.Info.text_item)
             for i in range(4):
                 pygame.draw.rect(surface, Color.black, UI.Map.Info.item[i], 2)
+                if i < len(player.item):
+                    player.item[i].render(surface, UI.Map.Info.item[i])
 
         elif game.player_info_tab == 'card':
             surface.blit(Font.neodgm_32.render('Card', False, Color.black), UI.Map.Info.text_card)

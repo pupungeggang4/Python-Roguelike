@@ -19,6 +19,7 @@ class Game():
         self.state_click = ''
         self.menu = False
         self.player_info_tab = ''
+        self.player_info_index = -1
         self.player_card_page = 0
         self.info_tab = ''
 

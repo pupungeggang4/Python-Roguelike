@@ -3,6 +3,7 @@ import pygame
 class Color():
     black = [0, 0, 0]
     white = [255, 255, 255]
+    transparent = [0, 0, 0, 0]
 
 class Font():
     neodgm_16 = None
@@ -25,7 +26,12 @@ class Image():
     locked = None
     select_frame = None
     select_frame_80 = None
-    character = [0, None]
+    character = {}
+
+    card = {}
+    weapon = {}
+    equipment = {}
+    item = {}
 
 def load_image():
     Image.icon['start'] = pygame.image.load('image/icon/IconStart.png')
@@ -52,3 +58,15 @@ def load_image():
     Image.select_frame_80 = pygame.image.load('image/SelectFrame80.png')
 
     Image.character[1] = pygame.image.load('image/Character1.png')
+
+    for i in range(1, 3):
+        Image.card[i] = pygame.image.load(f'image//card/Card{str(i).zfill(3)}.png')
+
+    for i in range(1, 2):
+        Image.weapon[i] = pygame.image.load(f'image/weapon/Weapon{str(i).zfill(3)}.png')
+
+    for i in range(101, 102):
+        Image.equipment[i] = pygame.image.load(f'image/equipment/Equipment{str(i).zfill(3)}.png')
+
+    for i in range(1, 2):
+        Image.item[i] = pygame.image.load(f'image/item/Item{str(i).zfill(3)}.png')

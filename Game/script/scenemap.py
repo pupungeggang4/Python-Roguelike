@@ -37,6 +37,7 @@ def mouse_up(game, pos, button):
                 if point_inside_rect_UI(pos, UI.Map.button_info):
                     game.state = 'info'
                     game.player_info_tab = 'profile'
+                    game.player_info_index = -1
 
                 handle_click_map(game, pos)
 
@@ -47,9 +48,20 @@ def mouse_up(game, pos, button):
                     game.state = ''
                 elif point_inside_rect_UI(pos, UI.Map.Info.tab_profile):
                     game.player_info_tab = 'profile'
+                    game.player_info_index = -1
                 elif point_inside_rect_UI(pos, UI.Map.Info.tab_card):
                     game.player_info_tab = 'card'
                     game.player_card_page = 0
+
+                if game.player_info_tab == 'profile':
+                    if point_inside_rect_UI(pos, UI.Map.Info.weapon):
+                        game.player_info_index = -1
+                    for i in range(len(game.player.equipment)):
+                        if point_inside_rect_UI(pos, UI.Map.Info.equipment[i]):
+                            game.player_info_index = i
+                    for i in range(len(game.player.item)):
+                        if point_inside_rect_UI(pos, UI.Map.Info.item[i]):
+                            game.player_info_index = i + 8
 
                 if game.player_info_tab == 'card':
                     if point_inside_rect_UI(pos, UI.Map.Info.button_prev):

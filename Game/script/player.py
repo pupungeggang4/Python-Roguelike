@@ -3,6 +3,7 @@ from script.module import *
 
 class Player():
     def __init__(self):
+        self.ID = 1
         self.level = 1
         self.exp = 0
         self.exp_max = 50
@@ -20,6 +21,7 @@ class Player():
     def set_player(self, ID):
         data = copy.deepcopy(Data.character[ID])
         data_d = copy.deepcopy(Data.character_description[ID])
+        self.ID = ID
         self.name = data_d['name']
         self.level = 1
         self.exp = 0
@@ -43,3 +45,6 @@ class Player():
         equipment.set_data(data['equipment'])
         self.equipment.append(equipment)
         self.item = []
+        item = Item()
+        item.set_data(1)
+        self.item.append(item)
